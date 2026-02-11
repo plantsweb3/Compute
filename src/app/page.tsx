@@ -1,65 +1,211 @@
-import Image from "next/image";
+import { CursorGlow } from "@/components/cursor-glow";
+import { BinaryOcean } from "@/components/binary-ocean";
+import { Nav } from "@/components/nav";
+import { Ticker } from "@/components/ticker";
+import { DemandSupply } from "@/components/demand-supply";
+import { Stats } from "@/components/stats";
+import { WhosBuying } from "@/components/whos-buying";
+import { CandleChart } from "@/components/candle-chart";
+import { ContractAddress } from "@/components/contract-address";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="scanlines min-h-screen">
+      <BinaryOcean />
+      <CursorGlow />
+      <Nav />
+
+      {/* Hero */}
+      <section className="relative z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden px-6">
+        {/* Radial glow behind text */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[rgba(57,255,20,0.06)] blur-[150px]" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+        <div className="relative z-10 flex flex-col items-center text-center">
+          {/* Network active pill */}
+          <div className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-[rgba(57,255,20,0.25)] bg-[rgba(5,5,5,0.6)] px-4 py-1.5 backdrop-blur-sm">
+            <div
+              className="h-2 w-2 rounded-full animate-pulse-green"
+              style={{
+                background: "#39FF14",
+                boxShadow: "0 0 8px rgba(57,255,20,0.6), 0 0 16px rgba(57,255,20,0.3)",
+              }}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <span
+              className="font-mono text-xs font-semibold tracking-wider"
+              style={{ color: "#39FF14", textShadow: "0 0 8px rgba(57,255,20,0.5)" }}
+            >
+              NETWORK ACTIVE
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl md:text-8xl">
+            The World Runs
+            <br />
+            on{" "}
+            <span
+              style={{
+                color: "#39FF14",
+                textShadow: "0 0 40px rgba(57,255,20,0.5), 0 0 80px rgba(57,255,20,0.25), 0 0 120px rgba(57,255,20,0.1)",
+              }}
+            >
+              Compute
+            </span>
+          </h1>
+
+          <p
+            className="mt-6 max-w-lg text-base leading-relaxed sm:text-lg"
+            style={{ color: "rgba(255,255,255,0.6)", textShadow: "0 0 20px rgba(5,5,5,0.9)" }}
           >
-            Documentation
-          </a>
+            Every AI model trained. Every frame rendered. Every block validated.
+            The scarcest resource of our generation isn&apos;t oil &mdash;
+            it&apos;s{" "}
+            <span style={{ color: "#39FF14", textShadow: "0 0 10px rgba(57,255,20,0.3)" }}>
+              processing power
+            </span>.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+            <a
+              href="#contract"
+              className="btn-green rounded-full px-8 py-3 font-mono text-sm"
+            >
+              BUY $COMPUTE
+            </a>
+            <a
+              href="#about"
+              className="btn-outline rounded-full px-8 py-3 font-mono text-sm"
+            >
+              READ THE THESIS
+            </a>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Ticker */}
+      <div className="relative z-10">
+        <Ticker />
+      </div>
+
+      {/* The Thesis */}
+      <section id="about" className="relative z-10 px-6 py-28 sm:py-36">
+        <div className="mx-auto max-w-6xl">
+          <div
+            className="mb-4 font-mono text-xs font-medium tracking-widest"
+            style={{ color: "#39FF14", textShadow: "0 0 10px rgba(57,255,20,0.3)" }}
+          >
+            001 &mdash; THE THESIS
+          </div>
+          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+            <div>
+              <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+                <span className="text-white">Compute is the</span>
+                <br />
+                <span className="glow-text">new oil.</span>
+              </h2>
+            </div>
+            <div className="flex flex-col gap-5">
+              <p className="text-base leading-relaxed text-white/50">
+                Nations are stockpiling{" "}
+                <span className="font-medium text-[--green]">GPUs</span>. Tech
+                giants are spending{" "}
+                <span className="font-medium text-[--green]">
+                  hundreds of billions
+                </span>{" "}
+                on data centers. The global demand for compute is growing
+                exponentially &mdash; and supply can&apos;t keep up.
+              </p>
+              <p className="text-base leading-relaxed text-white/50">
+                <span className="font-semibold text-[--green]">$COMPUTE</span>{" "}
+                is the memecoin that represents this fundamental shift. Not just
+                a token &mdash; a statement about where the world is headed.
+              </p>
+            </div>
+          </div>
+
+          {/* Demand vs Supply visual */}
+          <div className="mt-20">
+            <DemandSupply />
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="relative z-10 px-6 py-20">
+        <Stats />
+      </section>
+
+      {/* Who's Buying Compute — side by side with live chart */}
+      <section id="demand" className="relative z-10 px-6 py-28 sm:py-36">
+        <div className="mx-auto max-w-6xl">
+          <div
+            className="mb-4 font-mono text-xs font-medium tracking-widest"
+            style={{ color: "#39FF14", textShadow: "0 0 10px rgba(57,255,20,0.3)" }}
+          >
+            002 &mdash; THE DATA
+          </div>
+          <h2 className="mb-12 text-3xl font-bold tracking-tight sm:text-4xl">
+            <span className="text-white">Demand is</span>
+            <br />
+            <span className="glow-text">only going up.</span>
+          </h2>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            {/* Left: Who's buying */}
+            <WhosBuying />
+            {/* Right: Live chart */}
+            <CandleChart />
+          </div>
+        </div>
+      </section>
+
+      {/* Contract Address */}
+      <section id="contract" className="relative z-10 px-6 py-20">
+        <ContractAddress />
+      </section>
+
+      {/* CTA */}
+      <section className="relative z-10 px-6 py-28 sm:py-36">
+        <div className="mx-auto max-w-6xl text-center">
+          <div className="glow-card mx-auto max-w-2xl rounded-2xl p-12 sm:p-16">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
+              Join the
+              <br />
+              <span className="glow-text">Compute Era</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/50">
+              The future is measured in{" "}
+              <span className="font-medium text-[--green]">FLOPS</span>, not
+              barrels. Get in before the world catches on.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-green w-full rounded-full px-8 py-3 font-mono text-sm sm:w-auto"
+              >
+                FOLLOW ON X
+              </a>
+              <a
+                href="https://t.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline w-full rounded-full px-8 py-3 font-mono text-sm sm:w-auto"
+              >
+                TELEGRAM
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   );
 }
