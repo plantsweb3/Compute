@@ -123,8 +123,8 @@ export default function Home() {
               </p>
               <p className="text-base leading-relaxed text-white/50">
                 <span className="font-semibold text-[--green]">$COMPUTE</span>{" "}
-                is the memecoin that represents this fundamental shift. Not just
-                a token &mdash; a statement about where the world is headed.
+                represents this fundamental shift. Not just a token &mdash; a
+                statement about where the world is headed.
               </p>
             </div>
           </div>
