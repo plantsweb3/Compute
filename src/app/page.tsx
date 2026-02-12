@@ -165,24 +165,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contract Address */}
-      <section id="contract" className="relative z-10 px-6 py-20">
-        <ContractAddress />
-      </section>
-
       {/* CTA */}
-      <section className="relative z-10 px-6 py-28 sm:py-36">
+      <section id="contract" className="relative z-10 px-6 py-28 sm:py-36">
         <div className="mx-auto max-w-6xl text-center">
           <div className="glow-card mx-auto max-w-2xl rounded-2xl p-12 sm:p-16">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
-              Join the
-              <br />
-              <span className="glow-text">Compute Era</span>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+              <span className="text-white">Start</span>{" "}
+              <span className="glow-text">Computing...</span>
             </h2>
             <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/50">
-              The future is measured in{" "}
-              <span className="font-medium text-[--green]">FLOPS</span>, not
-              barrels. Get in before the world catches on.
+              Processing power is the most valuable resource of the 21st
+              century. Secure your{" "}
+              <span className="font-medium text-[--green]">COMPUTE</span> now.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -194,13 +188,21 @@ export default function Home() {
                 FOLLOW ON X
               </a>
               <a
-                href="https://t.me"
+                href="https://pump.fun"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline w-full rounded-full px-8 py-3 font-mono text-sm sm:w-auto"
               >
-                TELEGRAM
+                BUY NOW
               </a>
+            </div>
+            <div className="mt-8 border-t border-[--green-border] pt-6">
+              <div className="font-mono text-xs tracking-widest text-white/25">
+                CONTRACT ADDRESS
+              </div>
+              <div className="mt-2 rounded-lg border border-[--green-border] bg-[rgba(57,255,20,0.02)] px-5 py-3 font-mono text-sm tracking-wider text-[--green]">
+                TBA &mdash; LAUNCHING SOON
+              </div>
             </div>
           </div>
         </div>
