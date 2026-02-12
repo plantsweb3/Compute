@@ -55,8 +55,8 @@ export default function Home() {
             >
               Compute
             </span>
-            <Spinner size={50} strokeWidth={5} className="hidden sm:inline-block" />
-            <Spinner size={32} strokeWidth={5} className="inline-block sm:hidden" />
+            <Spinner size={50} className="hidden sm:inline-block" />
+            <Spinner size={32} className="inline-block sm:hidden" />
           </h1>
 
           <p
@@ -213,7 +213,7 @@ export default function Home() {
             background: "radial-gradient(circle at center, rgba(57,255,20,0.06) 0%, #050505 70%)",
           }}
         >
-          <Spinner size={120} strokeWidth={4.5} />
+          <Spinner size={120} />
           <span
             className="mt-6 font-mono text-2xl font-bold tracking-wider"
             style={{

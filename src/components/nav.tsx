@@ -10,7 +10,7 @@ export function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-[100] border-b border-[--green-border] bg-[#050505]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#" className="flex items-center gap-2.5">
-          <Spinner size={22} strokeWidth={5} />
+          <Spinner size={22} />
           <span className="font-mono text-sm font-semibold tracking-wider text-[--green]">
             $COMPUTE
           </span>
