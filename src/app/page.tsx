@@ -206,24 +206,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Standalone Logo Section — screenshottable */}
-      <section className="relative z-10 px-6 py-32">
-        <div className="mx-auto flex aspect-square max-w-md flex-col items-center justify-center rounded-2xl circuit-bg"
-          style={{
-            background: "radial-gradient(circle at center, rgba(57,255,20,0.06) 0%, #050505 70%)",
-          }}
-        >
-          <Spinner size={120} />
-          <span
-            className="mt-6 font-mono text-2xl font-bold tracking-wider"
-            style={{
-              color: "#39FF14",
-              textShadow: "0 0 20px rgba(57,255,20,0.5), 0 0 60px rgba(57,255,20,0.2)",
-            }}
-          >
-            $COMPUTE
-          </span>
-        </div>
+      {/* Spinner endcap */}
+      <section className="relative z-10 flex items-center justify-center py-32">
+        <Spinner size={120} />
       </section>
 
       <div className="relative z-10">
