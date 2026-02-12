@@ -92,6 +92,12 @@ body {
   background: rgba(57, 255, 20, 0.05);
 }
 
+/* Spinner */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }

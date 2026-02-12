@@ -2,6 +2,7 @@ import { CursorGlow } from "@/components/cursor-glow";
 import { BinaryOcean } from "@/components/binary-ocean";
 import { Nav } from "@/components/nav";
 import { Ticker } from "@/components/ticker";
+import { Spinner } from "@/components/spinner";
 import { DemandSupply } from "@/components/demand-supply";
 import { Stats } from "@/components/stats";
 import { WhosBuying } from "@/components/whos-buying";
@@ -42,10 +43,10 @@ export default function Home() {
           </div>
 
           {/* Headline */}
-          <h1 className="max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl md:text-8xl">
-            The World Runs
-            <br />
-            on{" "}
+          <h1 className="flex max-w-4xl flex-wrap items-center justify-center gap-x-4 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:gap-x-5 sm:text-6xl md:text-8xl">
+            <span>The World Runs</span>
+            <br className="w-full" />
+            <span>on</span>
             <span
               style={{
                 color: "#39FF14",
@@ -54,6 +55,8 @@ export default function Home() {
             >
               Compute
             </span>
+            <Spinner size={50} strokeWidth={5} className="hidden sm:inline-block" />
+            <Spinner size={32} strokeWidth={5} className="inline-block sm:hidden" />
           </h1>
 
           <p
@@ -200,6 +203,26 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Standalone Logo Section — screenshottable */}
+      <section className="relative z-10 px-6 py-32">
+        <div className="mx-auto flex aspect-square max-w-md flex-col items-center justify-center rounded-2xl circuit-bg"
+          style={{
+            background: "radial-gradient(circle at center, rgba(57,255,20,0.06) 0%, #050505 70%)",
+          }}
+        >
+          <Spinner size={120} strokeWidth={4.5} />
+          <span
+            className="mt-6 font-mono text-2xl font-bold tracking-wider"
+            style={{
+              color: "#39FF14",
+              textShadow: "0 0 20px rgba(57,255,20,0.5), 0 0 60px rgba(57,255,20,0.2)",
+            }}
+          >
+            $COMPUTE
+          </span>
         </div>
       </section>
 

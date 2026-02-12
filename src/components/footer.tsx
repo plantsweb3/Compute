@@ -1,9 +1,11 @@
+import { Spinner } from "@/components/spinner";
+
 export function Footer() {
   return (
     <footer className="border-t border-[--green-border] px-6 py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
-        <div className="flex items-center gap-2">
-          <div className="h-2 w-2 rounded-full bg-[--green] opacity-40 animate-pulse-green" />
+        <div className="flex items-center gap-2.5">
+          <Spinner size={16} strokeWidth={5} />
           <span className="font-mono text-sm tracking-wider text-white/30">
             $COMPUTE
           </span>
