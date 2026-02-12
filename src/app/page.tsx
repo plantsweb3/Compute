@@ -167,7 +167,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://x.com"
+                href="https://x.com/computesolana"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-green w-full rounded-full px-8 py-3 font-mono text-sm sm:w-auto"

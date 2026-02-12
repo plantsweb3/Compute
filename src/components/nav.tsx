@@ -31,7 +31,7 @@ export function Nav() {
             DEMAND
           </a>
           <a
-            href="https://x.com"
+            href="https://x.com/computesolana"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline rounded-full px-4 py-1.5 font-mono text-xs"
@@ -77,7 +77,7 @@ export function Nav() {
               DEMAND
             </a>
             <a
-              href="https://x.com"
+              href="https://x.com/computesolana"
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-sm text-white/40 transition-colors hover:text-[--green]"
