@@ -4,29 +4,29 @@ import { useEffect, useRef, useState } from "react";
 
 const entries = [
   {
-    year: "2024",
+    year: "2025",
+    entity: "INDUSTRY",
+    detail: "$580B spent on AI infrastructure in a single year",
+  },
+  {
+    year: "SEP 25",
+    entity: "STARGATE",
+    detail: "$500B joint venture breaks ground in Abilene, TX",
+  },
+  {
+    year: "NOV 25",
     entity: "MICROSOFT",
-    detail: "$100B+ data center buildout",
+    detail: "$16B deal to restart Three Mile Island nuclear plant",
   },
   {
-    year: "2024",
-    entity: "xAI",
-    detail: "100,000 GPU Memphis supercluster",
+    year: "DEC 25",
+    entity: "OPENAI",
+    detail: "$300B Oracle + $38B AWS deals to secure compute",
   },
   {
-    year: "2025",
-    entity: "META",
-    detail: "$65B AI infrastructure commitment",
-  },
-  {
-    year: "2025",
-    entity: "US GOV",
-    detail: "CHIPS Act expanding fab capacity",
-  },
-  {
-    year: "2024",
+    year: "JAN 26",
     entity: "NVIDIA",
-    detail: "$3T market cap, still supply-constrained",
+    detail: "Gaming GPUs shelved entirely, all silicon diverted to AI",
   },
 ];
 

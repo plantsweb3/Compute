@@ -4,24 +4,24 @@ import { useEffect, useRef, useState } from "react";
 
 const stats = [
   {
-    value: "$1T+",
-    label: "AI Infrastructure Spend by 2027",
-    sublabel: "Projected global investment",
+    value: "$602B",
+    label: "Hyperscaler Capex 2026",
+    sublabel: "36% increase year over year",
   },
   {
-    value: "10x",
-    label: "GPU Demand Growth",
-    sublabel: "Year over year since 2023",
+    value: "$3T",
+    label: "Infrastructure Needed by 2030",
+    sublabel: "Once-in-a-generation supercycle",
   },
   {
-    value: "2.5GW",
-    label: "New Data Center Power",
-    sublabel: "Being built this year alone",
+    value: "40%",
+    label: "NVIDIA Gaming GPU Cuts",
+    sublabel: "All silicon diverted to AI",
   },
   {
-    value: "\u221E",
-    label: "Compute Demand",
-    sublabel: "Always exceeds supply",
+    value: "95%",
+    label: "Data Center Occupancy",
+    sublabel: "Demand exceeds every facility built",
   },
 ];
 
