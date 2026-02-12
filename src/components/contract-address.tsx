@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export function ContractAddress() {
   const [copied, setCopied] = useState(false);
-  const address = "TBA \u2014 LAUNCHING SOON";
+  const address = "7Yw7GgWjATtDcAMBP3ebR5yScFrHEUdior3udvVbpump";
 
   const handleCopy = async () => {
     try {

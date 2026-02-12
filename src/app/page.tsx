@@ -175,7 +175,7 @@ export default function Home() {
                 FOLLOW ON X
               </a>
               <a
-                href="https://pump.fun"
+                href="https://pump.fun/coin/7Yw7GgWjATtDcAMBP3ebR5yScFrHEUdior3udvVbpump"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline w-full rounded-full px-8 py-3 font-mono text-sm sm:w-auto"
@@ -188,7 +188,7 @@ export default function Home() {
                 CONTRACT ADDRESS
               </div>
               <div className="mt-2 rounded-lg border border-[--green-border] bg-[rgba(57,255,20,0.02)] px-5 py-3 font-mono text-sm tracking-wider text-[--green]">
-                TBA &mdash; LAUNCHING SOON
+                7Yw7GgWjATtDcAMBP3ebR5yScFrHEUdior3udvVbpump
               </div>
             </div>
           </div>
