@@ -3,43 +3,41 @@ interface SpinnerProps {
   className?: string;
 }
 
-// r=20, circumference = 2 * π * 20 ≈ 125.66
-// 70% of arc = ~88, 30% gap = ~37.7
-const CIRCUMFERENCE = 125.66;
-const ARC_LENGTH = CIRCUMFERENCE * 0.7; // 87.96
-const GAP = CIRCUMFERENCE - ARC_LENGTH; // 37.7
-
 export function Spinner({ size = 24, className = "" }: SpinnerProps) {
-  const id = `spinner-grad-${size}`;
-
   return (
-    <svg
-      viewBox="0 0 50 50"
-      width={size}
-      height={size}
+    <div
       className={className}
       style={{
+        width: size,
+        height: size,
         animation: "spin 1.8s linear infinite",
         filter: "drop-shadow(0 0 8px rgba(57,255,20,0.67))",
       }}
     >
-      <defs>
-        {/* Gradient that tapers opacity along the arc */}
-        <linearGradient id={id} gradientUnits="userSpaceOnUse" x1="25" y1="5" x2="5" y2="35">
-          <stop offset="0%" stopColor="#39FF14" stopOpacity="1" />
-          <stop offset="100%" stopColor="#39FF14" stopOpacity="0.05" />
-        </linearGradient>
-      </defs>
-      <circle
-        cx="25"
-        cy="25"
-        r="20"
-        fill="none"
-        stroke={`url(#${id})`}
-        strokeWidth={6}
-        strokeLinecap="round"
-        strokeDasharray={`${ARC_LENGTH} ${GAP}`}
-      />
-    </svg>
+      <svg
+        viewBox="0 0 50 50"
+        width={size}
+        height={size}
+        style={{
+          // Conic gradient mask: taper from near-transparent at the tail
+          // to full opacity at the leading edge, then invisible for the gap.
+          // Extra 1% of solid at the start lets strokeLinecap="round" show fully.
+          maskImage:
+            "conic-gradient(from 0deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,1) 66%, rgba(0,0,0,1) 71%, transparent 71.5%, transparent 100%)",
+          WebkitMaskImage:
+            "conic-gradient(from 0deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,1) 66%, rgba(0,0,0,1) 71%, transparent 71.5%, transparent 100%)",
+        }}
+      >
+        <circle
+          cx="25"
+          cy="25"
+          r="20"
+          fill="none"
+          stroke="#39FF14"
+          strokeWidth={8.5}
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
   );
 }
