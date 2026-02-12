@@ -8,6 +8,7 @@ import { Stats } from "@/components/stats";
 import { WhosBuying } from "@/components/whos-buying";
 import { CandleChart } from "@/components/candle-chart";
 import { ContractAddress } from "@/components/contract-address";
+import { StatusPill } from "@/components/status-pill";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -25,22 +26,8 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 flex flex-col items-center text-center">
-          {/* Network active pill */}
-          <div className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-[rgba(57,255,20,0.25)] bg-[rgba(5,5,5,0.6)] px-4 py-1.5 backdrop-blur-sm">
-            <div
-              className="h-2 w-2 rounded-full animate-pulse-green"
-              style={{
-                background: "#39FF14",
-                boxShadow: "0 0 8px rgba(57,255,20,0.6), 0 0 16px rgba(57,255,20,0.3)",
-              }}
-            />
-            <span
-              className="font-mono text-xs font-semibold tracking-wider"
-              style={{ color: "#39FF14", textShadow: "0 0 8px rgba(57,255,20,0.5)" }}
-            >
-              NETWORK ACTIVE
-            </span>
-          </div>
+          {/* Cycling status pill */}
+          <StatusPill />
 
           {/* Headline */}
           <h1 className="flex max-w-4xl flex-wrap items-center justify-center gap-x-4 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:gap-x-5 sm:text-6xl md:text-8xl">
